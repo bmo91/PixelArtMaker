@@ -1,28 +1,47 @@
 <!DOCTYPE html>
-<html>
-<head>
-    <title>Pixel Art Maker!</title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Monoton">
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    <h1>Lab: Pixel Art Maker</h1>
+<html lang="en">
 
-    <h2>Choose Grid Size</h2>
-    <form id="sizePicker">
-        Grid Height:
-        <input type="number" id="inputHeight" name="height" min="1" value="1">
-        Grid Width:
-        <input type="number" id="inputWeight" name="width" min="1" value="1">
-        <input type="submit">
-    </form>
+    <head>
+        <title>Pixel Art Maker!</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Monoton">
+        <link rel="stylesheet" href="styles.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="designs.js"></script>
+    </head>
 
-    <h2>Pick A Color</h2>
-    <input type="color" id="colorPicker">
+    <body>
 
-    <h2>Design Canvas</h2>
-    <table id="pixelCanvas"></table>
+        <img src="http://cliparting.com/wp-content/uploads/2016/05/Pencil-free-to-use-clipart.png" alt="">
+    <h1>Pixel Art Maker</h1>
+        <h2>Choose Grid Size</h2>
 
-    <script src="designs.js"></script>
-</body>
-</html>
+        <form>
+
+            <div class="size">
+                <div class="size-height">
+                    <label for="input-height">Grid Height:</label>
+                    <input type="number" id="input-height" name="height" min="2" value="1" data-placement="top" data-trigger="hover" data-toggle="tooltip" title="You should enter a value between 2 and 100">
+                </div>
+                <div class="size-width">
+                    <label for="input-width">Grid Width:</label>
+                    <input type="number" id="input-width" name="width" min="2" value="1" data-placement="bottom" data-trigger="hover" data-toggle="tooltip" title="You should enter a value between 2 and 100">
+                </div>
+            </div>
+
+            <div class="buttons">
+                <!--Button that allows the user to create the grid with the specified dimensions-->
+                <input type="submit" value="Create Grid" id="create-grid">
+                <!--Button that allows the user to clear the grid from colors-->
+                <input type="submit" value="Clear Grid" id="clear-grid">
+            </div>
+
+        </form>
+
+        <h2>Pick A Color</h2>
+        <input type="color" id="color-picker">
+
+        <h2>Design Canvas</h2>
+        <table id="pixel-canvas">
+        </table>
+        </html>
